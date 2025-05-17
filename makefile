@@ -1,20 +1,18 @@
-# Makefile for bubble_sort project
-
+# Makefile for algorithms project
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11 -g
-TARGET = bubble_sort
-SRC = $(TARGET).c
-OBJ = $(TARGET).o
+CFLAGS = -Wall -Wextra -std=c99
+TARGET = algorithms
+SOURCES = main.c game_character.c
+HEADERS = game_character.h
+OBJECTS = $(SOURCES:.c=.o)
 
-all: $(TARGET)
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS)
 
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJECTS) $(TARGET)
 
 .PHONY: clean

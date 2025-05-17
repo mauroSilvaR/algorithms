@@ -13,6 +13,7 @@ typedef struct
 
 void play_with_characters(void);
 game_character *allocateGameCharacters(int n);
+game_character *allocateGameCharacters(int n);
 
 
 #endif /* end of GAME_CHARACTER_H */

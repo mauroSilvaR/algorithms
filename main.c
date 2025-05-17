@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include "game_character.h"
 
-
-
-
-
 // function prototypes
 void play_bubble_sort_alg(void);
 void play_quick_sort_alg();
@@ -73,26 +69,3 @@ void play_bubble_sort_alg(void)
 
 }
 
-game_character *allocateGameCharacters(int n)
-{
-    int i; 
-    // n is number of game characters to add
-    game_character *p = (game_character *) malloc(n*sizeof(game_character));
-    if(p==NULL)
-    {
-        printf("ERROR while allocating game characters!\n");
-        exit(1);
-    }
-
-    for(i=0;i<n;i++)
-    {
-        printf("type character name %d: ", i+1);
-        scanf("%50s", p[i].name); 
-        printf("type character game %d: ", i+1);
-        scanf("%50s", p[i].game); 
-
-    }
-
-    return p;
-    
-}
